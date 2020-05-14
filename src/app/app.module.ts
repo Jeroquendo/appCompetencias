@@ -1,47 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';  
 import { HttpClientModule } from '@angular/common/http';  
-import { SocialLoginModule, AuthServiceConfig, AuthService } from "angularx-social-login";
-import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
-import { DashboardComponent } from './dashboard/dashboard.component';  
-import { AppRoutingModule } from '../app/app-routing.module'; 
+import { NgModule } from '@angular/core';  
+import { AppComponent } from './app.component';  
+import { GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angularx-social-login';  
+import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';  
+import { LoginComponent } from './login/login.component';  
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegisterComponent } from './register/register.component';  
+import { AppRoutingModule } from '../app/app-routing.module';  
+import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { LoginComponent } from './Login/login.component';
-
-export function socialConfigs(){
-  let config = new AuthServiceConfig([
-    {
-      id: GoogleLoginProvider.PROVIDER_ID,
-      provider: new GoogleLoginProvider("Google-OAuth-Client-Id")
-    },
-    {
-      id: FacebookLoginProvider.PROVIDER_ID,
-      provider: new FacebookLoginProvider("Facebook-App-Id")
-    }
-  ]);
-  return config;
-}
-
-
-@NgModule({
-  declarations: [
+@NgModule({  
+  declarations: [  
     AppComponent,
     LoginComponent,
-    DashboardComponent
-  ],
-  imports: [
-    BrowserModule,
-    SocialLoginModule,
-    HttpClientModule,
+    RegisterComponent
+  ],  
+  imports: [  
+    BrowserModule,  
+    HttpClientModule, 
     AppRoutingModule
-  ],
-  providers: [
-    {
-      provide: AuthServiceConfig,
-      useFactory: socialConfigs
-    }
-  ],
-  bootstrap: [AppComponent]
-})
+
+  ],  
+  providers: [],  
+  bootstrap: [AppComponent]  
+})  
 export class AppModule { }

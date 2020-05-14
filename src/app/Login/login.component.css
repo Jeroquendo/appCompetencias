@@ -1,0 +1,16 @@
+.container-link-register{
+    display: flex;
+    justify-content: center;
+}
+
+.titulo-ingresar{
+    display: flex;
+    justify-content: center;
+}
+
+.titulo-bienvenida{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+}

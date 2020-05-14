@@ -1,3 +1,5 @@
+<h2 class="titulo-bienvenida"> Bienvenido a appCompetencias </h2> 
+
 <div class="container" style="padding-top:60px;">  
     <div class="row">  
         <div class="col-md-6 mx-auto">  
@@ -6,7 +8,7 @@
                     <div class="card-body">  
                         <form name="form">  
                             <!-- <button class="btn btn-primary" style="text-align:center">Login</button>   -->  
-                            <button type="submit" class="btn btn-block btn-success">Login</button>  
+                            <h3 class="titulo-ingresar">Ingresar</h3>  
                             <div style="padding-top: 20px;" class="input-group mb-3">  
                                 <div class="input-group-prepend">  
                                     <span class="input-group-text"><i class="icon-user"></i></span>  
@@ -18,38 +20,36 @@
                                 <div class="input-group-prepend">  
                                     <span class="input-group-text"><i class="icon-lock"></i></span>  
                                 </div>  
-                                <input type="password" name="Passward" class="form-control" placeholder="Password">  
-                            </div>  
-                            <div>  
-                                <p style="color:#E92626;font-size:20px;font-weight:normal" Class="success" align="left">  
-                                    {{errorMessage}}  
-                                </p>  
-                            </div>  
+                                <input type="password" name="Password" class="form-control" placeholder="Contraseña">  
+                            </div>   
                             <div class="row">  
                                 <div class="col-6">  
-                                    <button type="submit" class="btn btn-primary px-4">Login</button>  
+                                    <button type="submit" class="btn btn-primary px-4">Ingresar</button>  
                                 </div>  
                                 <div class="col-6 text-right">  
-                                    <button type="button" class="btn btn-link px-0">Forgot password?</button>  
+                                    <button type="button" class="btn btn-link px-0">¿ Olvidaste tu contraseña ?</button>  
                                 </div>  
                             </div>  
                         </form>  
                             <hr style="border-top: 1px solid #eee;">  
                             <div class="row">  
                                 <div class="col-6">  
-                                    <button (click)="socialSignIn('facebook')" class="loginBtn loginBtn--facebook">  
-                                        Login with Facebook  
+                                    <button class="loginBtn loginBtn--facebook">  
+                                        Ingresa con Facebook  
                                     </button>  
                                 </div>  
                                 <div class="col-6 text-right">  
-                                    <button (click)="socialSignIn('google')" class="loginBtn loginBtn--google">  
-                                        Login with Google  
+                                    <button  class="loginBtn loginBtn--google">  
+                                        Ingresa con Google  
                                     </button>  
                                 </div>  
                             </div>  
                     </div>  
-                </div>  
+                </div> 
             </div>  
         </div>  
-    </div>  
+    </div> 
+    <div class="container-link-register">
+        <span>Aun no tienes una cuenta ?   <a routerLink="/register">crea una cuenta</a></span>
+    </div>
 </div>

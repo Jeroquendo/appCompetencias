@@ -1,8 +1,8 @@
-
 import { NgModule } from '@angular/core';    
 import { Routes, RouterModule } from '@angular/router';    
 import { DashboardComponent } from './dashboard/dashboard.component';    
-import { LoginComponent } from './Login/login.component';    
+import { LoginComponent } from './login/login.component';    
+import { RegisterComponent } from './register/register.component';
 export const routes: Routes = [    
   {    
     path: '',    
@@ -22,7 +22,16 @@ export const routes: Routes = [
     data: {    
       title: 'Dashboard Page'    
     }    
-  },       
+  },   
+  {    
+    path: 'register',    
+    component: RegisterComponent,    
+    data: {    
+      title: 'Register Page'    
+    }    
+  }, 
+  
+
 ];    
 @NgModule({    
   imports: [RouterModule.forRoot(routes)],    

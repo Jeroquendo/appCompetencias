@@ -1,0 +1,15 @@
+.titulo-registro{
+    display: flex;
+    justify-content: center;
+}
+
+.col-6{
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    text-align:center;
+}
+.aprende-css{
+    display: flex;
+    justify-content: center;
+}
