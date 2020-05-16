@@ -1,0 +1,29 @@
+.textarea {
+        text-align: justify;
+        white-space: normal;
+    }
+
+.placeholder {
+    text-align: center;
+    }
+
+.div-label{
+    padding: 15px ;
+    width   : 500px;
+    height  : 100px;
+    margin: auto;
+    text-align: center;
+    white-space: normal;
+}
+
+.div-boton{
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+}
+
+.titulo-usuario{
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}

@@ -7,7 +7,7 @@ import { SocialloginService } from '../servicio/sociallogin.service';
 import { Router } from '@angular/router';  
 
 @Component({  
-    selector: 'dashboard',  
+    selector: 'app-dashboard',  
     templateUrl: './dashboard.component.html',  
     styleUrls: ['./dashboard.component.css']  
   })  

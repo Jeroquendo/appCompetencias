@@ -9,12 +9,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';  
 import { AppRoutingModule } from '../app/app-routing.module';  
 import { RouterModule } from '@angular/router';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({  
   declarations: [  
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    InicioComponent
   ],  
   imports: [  
     BrowserModule,  
