@@ -1,16 +1,50 @@
 import { Component, OnInit } from '@angular/core';  
 import { GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angularx-social-login';  
-import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';  
+import { SocialLoginModule, AuthServiceConfig, SocialUser } from 'angularx-social-login';  
 import { Socialusers } from '../modelos/socialusers'  
 import { SocialloginService } from '../servicio/sociallogin.service';  
 import { Router, ActivatedRoute, Params } from '@angular/router';  
+
 @Component({  
   selector: 'app-login',  
   templateUrl: './login.component.html',  
   styleUrls: ['./login.component.css']  
 })  
-export class LoginComponent {  
+export class LoginComponent implements OnInit {  
+  user: SocialUser;
+  loggedIn: boolean;
+  
+  constructor(private authService: AuthService, private route: Router) { }
+
+  signInWithFB(): void {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
+  signInWithGoogle(): void {
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
+
+
+  ngOnInit() {
+    this.authService.authState.subscribe((user) => {
+     localStorage.setItem('user',JSON.stringify(user));
+      this.user = user;
+     this.loggedIn = (user != null);
+     console.log(this.user);
+     this.user ? 
+     this.route.navigate(['inicio']) : null;
+
+    })  ;
+   }
+
+   goToLogin(){
+     this.route.navigate(['inicio']);
+     console.log("funciona");
+   }
+
+   
  
+  
+  
   /*public socialSignIn(socialProvider: string) {  
     let socialPlatformProvider;  
     if (socialProvider === 'facebook') {  

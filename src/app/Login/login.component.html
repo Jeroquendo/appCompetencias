@@ -1,14 +1,14 @@
 <h2 class="titulo-bienvenida"> Bienvenido a appCompetencias </h2> 
 
-<div class="container" style="padding-top:60px;">  
+<div class="container" style="padding: top 50px;">  
     <div class="row">  
         <div class="col-md-6 mx-auto">  
             <div class="card-group">  
                 <div class="card p-4">  
                     <div class="card-body">  
-                        <form name="form">  
+                        <form name="form" (ngSubmit)="goToLogin()">  
                             <!-- <button class="btn btn-primary" style="text-align:center">Login</button>   -->  
-                            <h3 class="titulo-ingresar">Ingresar</h3>  
+                            <h2 class="titulo-ingresar">Ingresar</h2>  
                             <div style="padding-top: 20px;" class="input-group mb-3">  
                                 <div class="input-group-prepend">  
                                     <span class="input-group-text"><i class="icon-user"></i></span>  
@@ -24,7 +24,7 @@
                             </div>   
                             <div class="row">  
                                 <div class="col-6">  
-                                    <button type="submit" class="btn btn-primary px-4" routerLink="/inicio">Ingresar</button>  
+                                    <button type="submit" class="btn btn-primary px-4" >Ingresar</button>  
                                 </div>  
                                 <div class="col-6 text-right">  
                                     <button type="button" class="btn btn-link px-0">¿ Olvidaste tu contraseña ?</button>  
@@ -34,12 +34,12 @@
                             <hr style="border-top: 1px solid #eee;">  
                             <div class="row">  
                                 <div class="col-6">  
-                                    <button class="loginBtn loginBtn--facebook">  
+                                    <button class="loginBtn loginBtn--facebook" type="button" (click)="signInWithFB()" routerLink="/inicio" >  
                                         Ingresa con Facebook  
                                     </button>  
                                 </div>  
                                 <div class="col-6 text-right">  
-                                    <button  class="loginBtn loginBtn--google">  
+                                    <button  class="loginBtn loginBtn--google" (click)="signInWithGoogle()" >  
                                         Ingresa con Google  
                                     </button>  
                                 </div>  
@@ -49,7 +49,7 @@
             </div>  
         </div>  
     </div> 
-    <div class="container-link-register">
+    <div class="container-link-register" style="padding-top: 10px;">
         <span>Aun no tienes una cuenta ?   <a routerLink="/register">crea una cuenta</a></span>
     </div>
 </div>
