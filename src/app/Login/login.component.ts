@@ -4,6 +4,7 @@ import { SocialLoginModule, AuthServiceConfig, SocialUser } from 'angularx-socia
 import { Socialusers } from '../modelos/socialusers'  
 import { SocialloginService } from '../servicio/sociallogin.service';  
 import { Router, ActivatedRoute, Params } from '@angular/router';  
+import { FormBuilder, FormGroup, FormsModule, FormControl, Validators } from '@angular/forms';
 
 @Component({  
   selector: 'app-login',  
@@ -13,9 +14,10 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class LoginComponent implements OnInit {  
   user: SocialUser;
   loggedIn: boolean;
+  myForm: FormGroup;
+  user2: any;
+  constructor(private authService: AuthService, private route: Router, private fb: FormBuilder) { }
   
-  constructor(private authService: AuthService, private route: Router) { }
-
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
@@ -33,15 +35,38 @@ export class LoginComponent implements OnInit {
      this.user ? 
      this.route.navigate(['inicio']) : null;
 
-    })  ;
+    });
+    this.myForm =this.fb.group({
+      email: new FormControl('',[
+        Validators.required,
+        Validators.email,
+        Validators.minLength(6)
+      ]),
+      password: new FormControl('',[
+        Validators.required,
+        Validators.minLength(6)
+      ])
+    });
    }
 
    goToLogin(){
-     this.route.navigate(['inicio']);
-     console.log("funciona");
+    //this.route.navigate(['inicio']);
+    //console.log("funciona");
+    this.user2 = JSON.stringify(this.myForm.value)
+    localStorage.setItem("user",this.user2); 
+    let firstname = localStorage.getItem("email");  
+    this.route.navigate(['inicio']);
+    console.log(firstname);
    }
 
-   
+   onSaveForm(){
+     if(this.myForm.valid){
+        this.goToLogin();
+     }else{
+       alert('Usuario no registrado')
+     }
+   }
+
  
   
   

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'angularx-social-login';  
 import { Router } from '@angular/router';
+import { RegisterComponent } from '../register/register.component'
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -18,7 +19,6 @@ export class InicioComponent implements OnInit {
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('user'));
     this.firstName = this.user.firstName;
-
   }
 
 }

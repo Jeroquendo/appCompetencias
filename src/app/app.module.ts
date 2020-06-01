@@ -15,6 +15,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { DragDropModule} from '@angular/cdk/drag-drop';
 
 const config = new AuthServiceConfig([
   {
@@ -36,10 +38,14 @@ const config = new AuthServiceConfig([
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    InicioComponent
+    InicioComponent,
+    DashboardComponent
   ],  
   imports: [  
     BrowserModule,  
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule, 
     AppRoutingModule,
     SocialLoginModule,
@@ -47,8 +53,8 @@ const config = new AuthServiceConfig([
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    FormsModule,
-    ReactiveFormsModule
+    DragDropModule
+    
 
   ],  
   providers: [
