@@ -59,7 +59,7 @@
                 </g>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" style="float: left;" tabindex="-1"  class="puerta3" >
+            <div _ngcontent-cuy-c303="" style="float: left;" tabindex="-1"  class="puerta3" cdkDrag>
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <g fill="none">
                   <path d="M26 2L9.03 18.97M2 2c0 6.627 2.343 12.284 7.03 16.97" stroke="#000" stroke-width="2"></path>
@@ -67,7 +67,7 @@
                 </g>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" style="float: left;" tabindex="-1"  class="puerta4" >
+            <div _ngcontent-cuy-c303="" style="float: left;" tabindex="-1"  class="puerta4" cdkDrag>
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <g fill="none">
                   <path d="M26 26L9.03 9.03M26 2C19.373 2 13.716 4.343 9.03 9.03" stroke="#000" stroke-width="2"></path>
@@ -407,15 +407,22 @@
       </div>
     
   </div>
-  <div class="row" style="flex-grow: 2; ">
+  <div class="row" style="flex-grow: 2; margin-left: 100px;">
     <div class="col-md-6 mx-auto droptarget" (drop)="drop($event)" (dragover)="allowDrop($event)">
       <div class="card p-4 example-boundary " style="position: absolute; z-index: -1;" >
           <div #container2 ></div>
       </div>      
     </div>
   </div>
+  
+  
+  <div id="div1" style="width: 20%;  display: flex;  justify-content: center;">
+    
+      <p appTips [tips]="tipsList" ></p>
+    
+  </div>
 
-
+  
 
 
   <!--<div class="row" style="flex-grow: 2; margin-right: 150px;"> 

@@ -16,18 +16,17 @@ export class LoginComponent implements OnInit {
   loggedIn: boolean;
   myForm: FormGroup;
   user2: any;
+  userFB:any;
+  firstName: any;
+
   constructor(private authService: AuthService, private route: Router, private fb: FormBuilder) { }
   
-  signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-  }
-  signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-  }
-
+ 
+ 
 
   ngOnInit() {
     this.authService.authState.subscribe((user) => {
+      console.log(user)
      localStorage.setItem('user',JSON.stringify(user));
       this.user = user;
      this.loggedIn = (user != null);
@@ -49,7 +48,7 @@ export class LoginComponent implements OnInit {
     });
    }
 
-   goToLogin(){
+   goToHome(){
     //this.route.navigate(['inicio']);
     //console.log("funciona");
     this.user2 = JSON.stringify(this.myForm.value)
@@ -61,7 +60,7 @@ export class LoginComponent implements OnInit {
 
    onSaveForm(){
      if(this.myForm.valid){
-        this.goToLogin();
+        this.goToHome();
      }else{
        alert('Usuario no registrado')
      }

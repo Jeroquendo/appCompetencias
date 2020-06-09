@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ViewContainerRef, TemplateRef } from '@angular/core';  
 import { Router } from '@angular/router';  
 import { moveItemInArray, transferArrayItem, CdkDragDrop } from '@angular/cdk/drag-drop';
-
+import { TipsDirective } from 'src/app/dashboard/tips.directive';
 
 @Component({  
     selector: 'app-dashboard',  
@@ -17,6 +17,12 @@ import { moveItemInArray, transferArrayItem, CdkDragDrop } from '@angular/cdk/dr
     sillas: boolean;
     cubiculos: boolean;
     show: boolean= true;*/
+    tipsList = ['Recuerda que antes de realizar esta distribución de planta debes tener clara la información mostrada acerca del método SLP para que puedas realizarlo de la mejor manera :D',
+    'Recuerda estos tres parámetros 1. Relaciones: indica el grado relativo de proximidad deseado o requerido entre máquinas, departamentos o áreas en cuestión. 2. Espacio: determinado por la cantidad, clase y forma o configuración de los equipos a distribuir. 3. Ajuste: arreglo físico de los equipos, maquinaria y servicios, en condiciones reales.',
+    'Analiza y divide bien las áreas de la planta.', 'Distribuye de la mejor manera los materiales y máquinas siguiendo las fases del modelo SLP.', 
+      'El método SPL incorpora el flujo de materiales en el estudio de distribución, organizando el proceso de planificación total de manera racional y estableciendo una serie de fases y técnicas que permiten identificar, valorar y visualizar todos los elementos involucrados en la implantación y las relaciones existentes entre ellos.',
+      'Te recomendamos realizar varias soluciones en una hoja y después de analizarlas plantee la que consideres mejor.'];
+    estiloDisplay: 'none';
     cv: any; cx: any;
     objetos: any; objetoActual = null;
     inicioX = 0; inicioY = 0; 
@@ -63,8 +69,18 @@ import { moveItemInArray, transferArrayItem, CdkDragDrop } from '@angular/cdk/dr
           this.cx.fillRect(this.objetos[i].x, this.objetos[i].y, this.objetos[i].width, this.objetos[i].height);
         }
     }
-
-    
+      /*
+      cambiarDiv(){
+      setTimeout(function() {
+          var contenedor1 = document.querySelector("#div1");
+          contenedor1.fadeOut(1500);
+      },3000);
+   
+      setTimeout(function() {
+        var contenedor2 = document.querySelector('#div2');
+        contenedor2.fadeIn(1500);
+      },2000);
+  }*/
 
 
     

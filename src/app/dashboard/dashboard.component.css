@@ -63,3 +63,13 @@
     margin: auto;
     max-width: 100%;
   }
+
+  #div1{
+    height: 200px;
+    border: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: inline-flex;
+    position: relative;
+    border-radius: 4px;
+    margin-right: 40px;
+  }

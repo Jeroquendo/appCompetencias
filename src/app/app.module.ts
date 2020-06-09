@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DragDropModule} from '@angular/cdk/drag-drop';
+import { TipsDirective } from 'src/app/dashboard/tips.directive';
 
 const config = new AuthServiceConfig([
   {
@@ -39,7 +40,8 @@ const config = new AuthServiceConfig([
     LoginComponent,
     RegisterComponent,
     InicioComponent,
-    DashboardComponent
+    DashboardComponent,
+    TipsDirective
   ],  
   imports: [  
     BrowserModule,  
@@ -54,7 +56,6 @@ const config = new AuthServiceConfig([
     MatButtonModule,
     MatCardModule,
     DragDropModule
-    
 
   ],  
   providers: [

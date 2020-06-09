@@ -6,7 +6,7 @@
             <div class="card-group">  
                 <div class="card p-4">  
                     <div class="card-body">  
-                        <form [formGroup]="myForm" (ngSubmit)="goToLogin()">  
+                        <form [formGroup]="myForm" (ngSubmit)="goToHome()">  
                             <!-- <button class="btn btn-primary" style="text-align:center">Login</button>   -->  
                             <h2 class="titulo-ingresar">Ingresar</h2>  
                             <div style="padding-top: 20px;" class="input-group mb-3">  
@@ -33,12 +33,12 @@
                             <hr style="border-top: 1px solid #eee;">  
                             <div class="row">  
                                 <div class="col-6">  
-                                    <button class="loginBtn loginBtn--facebook" type="button" (click)="signInWithFB()" routerLink="/inicio" >  
+                                    <button class="loginBtn loginBtn--facebook" type="button" [routerLink]="['/inicio']" [queryParams]="{media:'fb'}" >  
                                         Ingresa con Facebook  
                                     </button>  
                                 </div>  
                                 <div class="col-6 text-right">  
-                                    <button  class="loginBtn loginBtn--google" (click)="signInWithGoogle()" >  
+                                    <button  class="loginBtn loginBtn--google" [routerLink]="['/inicio']" [queryParams]="{media:'ggle'}" >  
                                         Ingresa con Google  
                                     </button>  
                                 </div>  
