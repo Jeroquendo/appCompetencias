@@ -59,7 +59,8 @@
   }
   .loginBtn--google:hover,
   .loginBtn--google:focus {
-    background: #E74B37;
+    background-color: #E74B37;
+    background-image: linear-gradient(#E74B37, #db1414);
   }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

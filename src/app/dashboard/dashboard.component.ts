@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ViewContainerRef, TemplateRef } from '@an
 import { Router } from '@angular/router';  
 import { moveItemInArray, transferArrayItem, CdkDragDrop } from '@angular/cdk/drag-drop';
 import { TipsDirective } from 'src/app/dashboard/tips.directive';
+import { AuthService } from 'angularx-social-login';
 
 @Component({  
     selector: 'app-dashboard',  
@@ -33,8 +34,12 @@ import { TipsDirective } from 'src/app/dashboard/tips.directive';
     @ViewChild('container', {read:ViewContainerRef}) container;
 
     selectorParedes = document.querySelector('#option-paredes');
-    constructor(private viewContainerRef: ViewContainerRef) { }  
+    constructor(private viewContainerRef: ViewContainerRef, private authService: AuthService, private route: Router) { }  
     
+    signOut(): void{
+      this.authService.signOut().then(response => this.route.navigate(['login']));
+      console.log("sirve");
+    }
     ngOnInit():void{
         //this.cargar();
         //this.dragStart(event);

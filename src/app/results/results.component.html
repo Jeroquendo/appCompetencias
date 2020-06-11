@@ -1,0 +1,38 @@
+<p>results works!</p>
+<h2 style="  display: flex;justify-content: center;padding-top: 20px;">Resultados</h2>
+<div class="example-box" id="recomendaciones" style="display: flex; margin: auto;"></div>
+
+<div class="row" style="display: flex; justify-content: center; padding-top: 10px;">
+    <form>
+        <p class="clasificacion">
+          <input id="radio1" type="radio" name="estrellas" value="5"><!--
+          --><label for="radio1">★</label><!--
+          --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+          --><label for="radio2">★</label><!--
+          --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+          --><label for="radio3">★</label><!--
+          --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+          --><label for="radio4">★</label><!--
+          --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+          --><label for="radio5">★</label>
+        </p>
+      </form>
+</div>
+
+<div id="div-botones" style="padding: 15px; display: flex; justify-content: center;">
+    <div class="row">
+        <div style="margin: 5px;">
+        <button id="descargar" style="margin-left: 5px;" ></button><br>
+        <span>Descargar</span>
+      </div>
+      <div style="margin: 5px;">
+        <button id="reintentar"   style="margin-left: 20px; " routerLink="/dashboard"></button><br>
+        <span >Vuelve a intentar</span>
+      </div>
+      <div style="margin: 5px;">
+        <button  id="compartir" routerLink="/#"></button><br>  
+        <span >Compartir</span>
+      </div>
+    </div>
+
+</div>

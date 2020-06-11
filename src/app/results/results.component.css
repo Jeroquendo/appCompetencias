@@ -1,0 +1,76 @@
+.example-box {
+    width: 200px;
+    height: 200px;
+    border: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 4px;
+    margin-right: 25px;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 10px;
+  
+  }
+
+  .example-box2 {
+    width: 400px;
+    height: 400px;
+    margin-left: -50px
+  }
+
+  #descargar{
+    background:url('src\images\descargar.png');
+    background-size: 100% 100%;
+    border: none;
+    height: 50px;
+    width: 50px;
+  }
+  #descargar:focus{
+      outline: 0;
+  }
+
+  #reintentar{
+    background:url('src\images\reintentar.png');
+    background-size: 100% 100%;
+    border: none;
+    height: 50px;
+    width: 50px;
+  }
+  #reintentar:focus{
+    outline: 0;
+    }
+
+  #compartir{
+    background:url('src\images\share.png');
+    background-size: 100% 100%;
+    border: none;
+    height: 50px;
+    width: 50px;
+  }
+  #compartir:focus{
+    outline: 0;
+  }
+  label{
+      color: grey;
+  }
+
+  .clasificacion{
+    direction: rtl;/* right to left */
+    unicode-bidi: bidi-override;/* bidi de bidireccional */
+    
+}
+label:hover,
+label:hover ~ label{color:orange;}
+
+input[type="radio"] {
+    display: none;
+  }
+
+input[type="radio"]:checked ~ label {
+    color: orange;
+  }

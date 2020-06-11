@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';    
 import { RegisterComponent } from './register/register.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { ResultsComponent } from './results/results.component';
 export const routes: Routes = [    
   {    
     path: '',    
@@ -36,6 +37,14 @@ export const routes: Routes = [
     component: InicioComponent,    
     data: {    
       title: 'Inicio Page'    
+    }    
+  }, 
+
+  {    
+    path: 'results',    
+    component: ResultsComponent,    
+    data: {    
+      title: 'Results Page'    
     }    
   } 
   

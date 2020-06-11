@@ -60,8 +60,7 @@
     width: 400px;
     height: 400px;
     background-image: url('src\images\cuadricula.png');
-    margin: auto;
-    max-width: 100%;
+    margin-left: -50px
   }
 
   #div1{
@@ -72,4 +71,43 @@
     position: relative;
     border-radius: 4px;
     margin-right: 40px;
+  }
+  #preview{
+    background:url('src\images\preview.png');
+    background-size: 100% 100%;
+    border: none;
+    height: 50px;
+    width: 50px;
+  }
+  #preview:focus{
+      outline: 0;
+  }
+
+  #volver{
+    background:url('src\images\home.png');
+    background-size: 100% 100%;
+    border: none;
+    height: 50px;
+    width: 50px;
+  }
+  #volver:focus{
+    outline: 0;
+    }
+  .div-boton{
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      margin-left: 100px;
+      margin-right: -50px;
+
+  }
+  #logout{
+    background:url('src\images\logout.png');
+    background-size: 100% 100%;
+    border: none;
+    height: 50px;
+    width: 50px;
+  }
+  #logout:focus{
+    outline: 0;
   }
