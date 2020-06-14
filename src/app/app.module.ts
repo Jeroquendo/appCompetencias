@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DragDropModule} from '@angular/cdk/drag-drop';
 import { TipsDirective } from 'src/app/dashboard/tips.directive';
+import { HandleMouseEventDirective } from './directives/handle-mouse-event.directive';
 
 const config = new AuthServiceConfig([
   {
@@ -41,7 +42,8 @@ const config = new AuthServiceConfig([
     RegisterComponent,
     InicioComponent,
     DashboardComponent,
-    TipsDirective
+    TipsDirective,
+    HandleMouseEventDirective
   ],  
   imports: [  
     BrowserModule,  

@@ -27,13 +27,10 @@
       <div [ngSwitch]="optionSelected"  class="left-spacer" style="width: 150px; justify-content: center; display: flex;">
         <div>
           <div *ngSwitchCase="'paredes'"  id="container-paredes" style=" padding-top: 10px">
-              <div style="float: left;" tabindex="-1"  cdkDrag>
-                <svg name="fpWall" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="28px" height="28px">
-                  <path d="M 2 12 L 2 16 L 26 16 L 26 12 Z" fill="#ffffff" fill-opacity="1"></path>
-                  <path d="M 2 12 L 26 12 L 26 16 L 2 16 L 2 12 Z" stroke="#000000" stroke-opacity="1" stroke-width="2" fill="none"></path>
-                </svg>
+              <div draggable="true" (dragstart)="drag($event)" style="float: left;" tabindex="-1" >
+                <img id="pared" src='assets/pared.svg' />
               </div>
-            <div style="float: left;" tabindex="-1" cdkDrag >
+            <div style="float: left;" tabindex="-1" >
               <svg name="fpWall" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="28px" height="28px">
                 <g transform="matrix(6.123233995736766e-17,1,-1,6.123233995736766e-17,28,-8.572527594031472e-16)">
                   <path d="M 2 12 L 2 16 L 26 16 L 26 12 Z" fill="#ffffff" fill-opacity="1"></path>
@@ -45,13 +42,13 @@
         </div>
         <div style=" display: flex; justify-content: center;">
           <div *ngSwitchCase="'puertas'" class="container-puertas" style="padding-top: 10px;">
-            <div _ngcontent-cuy-c303="" style="float: left;"  tabindex="-1"  class="puerta1" cdkDrag>
+            <div _ngcontent-cuy-c303="" style="float: left;"  tabindex="-1"  class="puerta1">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <path d="M2 26L18.97 9.03M26 26c0-6.627-2.343-12.284-7.03-16.97" stroke="#000" stroke-width="2" fill="none"></path>
                 <path d="M2 2h24v24H2z" fill="none"></path>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" style="float: left;" tabindex="-1"  class="puerta2" cdkDrag>
+            <div _ngcontent-cuy-c303="" style="float: left;" tabindex="-1"  class="puerta2">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <g fill="none">
                   <path d="M2 2l16.97 16.97M2 26c6.627 0 12.284-2.343 16.97-7.03" stroke="#000" stroke-width="2"></path>
@@ -59,7 +56,7 @@
                 </g>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" style="float: left;" tabindex="-1"  class="puerta3" cdkDrag>
+            <div _ngcontent-cuy-c303="" style="float: left;" tabindex="-1"  class="puerta3">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <g fill="none">
                   <path d="M26 2L9.03 18.97M2 2c0 6.627 2.343 12.284 7.03 16.97" stroke="#000" stroke-width="2"></path>
@@ -67,7 +64,7 @@
                 </g>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" style="float: left;" tabindex="-1"  class="puerta4" cdkDrag>
+            <div _ngcontent-cuy-c303="" style="float: left;" tabindex="-1"  class="puerta4">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <g fill="none">
                   <path d="M26 26L9.03 9.03M26 2C19.373 2 13.716 4.343 9.03 9.03" stroke="#000" stroke-width="2"></path>
@@ -79,29 +76,29 @@
         </div>
         <div >
           <div *ngSwitchCase="'mesas'" class="container-mesas" style="padding-top: 10px; ">
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="mesa1" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="mesa1">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <path d="M10.886 3.656c1.468-2.184 4.76-2.184 6.24 0 3.292 4.872 3.292 15.816 0 20.712-1.48 2.16-4.772 2.16-6.24 0-3.304-4.896-3.304-15.84 0-20.712z"
                 stroke="#000" stroke-width="2" fill="#ddd"></path>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="mesa2" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="mesa2">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <path d="M9.632 2.792c3.37-1.032 5.387-1.032 8.77 0 1.612 6.96 1.612 15.504 0 22.44-3.383 1.032-5.4 1.032-8.77 0-1.624-6.936-1.624-15.48 0-22.44z"
                 stroke="#000" stroke-width="2" fill="#ddd"></path>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="mesa3" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="mesa3">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <path d="M8.4 2h11.2v24H8.4z" stroke="#000" stroke-width="2" fill="#ddd"></path>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="mesa4" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="mesa4">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <path d="M26 14c0 6.627-5.373 12-12 12S2 20.627 2 14 7.373 2 14 2s12 5.373 12 12" stroke="#000" stroke-width="2" fill="#ddd"></path>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="mesa5" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="mesa5">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <path d="M2 2h24v24H2z" stroke="#000" stroke-width="2" fill="#ddd"></path>
               </svg>
@@ -110,7 +107,7 @@
         </div>
         <div >
           <div *ngSwitchCase="'sillas'" class="container-sillas" style="padding-top: 10px; ">
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="silla1" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="silla1">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <path d="M8.48 20.408l1.752.984-2.472 4.152c-.672 1.176-2.448.168-1.776-.984l2.496-4.152zM19.568 20.408l-1.752.984 2.472 4.152c.672 1.176 2.448.168 1.776-.984l-2.496-4.152z" stroke="#000" stroke-width="2"></path>
                 <path d="M25.112 15.056c0-5.904-4.968-10.704-11.088-10.704-6.12 0-11.088 4.8-11.088 10.704 0 5.904 4.968 10.704 11.088 10.704 6.12 0 11.088-4.8 11.088-10.704z" stroke="#000" stroke-width="2" fill="#ccc"></path>
@@ -119,7 +116,7 @@
                 <path d="M2.192 9.92h2.4v9.792c-1.656.696-1.656.696-2.4 0V9.92zM23.456 9.92h2.4v9.792c-.744.696-.744.696-2.4 0V9.92z" stroke="#000" stroke-width="2" fill="#666"></path>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="silla2" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="silla2">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <path d="M8.984 23.312l1.44.816-.864 1.464c-.552.96-2.016.168-1.44-.816l.864-1.464zM19.04 23.312l-1.44.816.864 1.464c.552.96 2.016.168 1.44-.816l-.864-1.464z"></path>
                 <path d="M25.448 11.432c0 2.16-5.136 3.936-11.448 3.936-6.336 0-11.448-1.776-11.448-3.936 0-2.184 5.112-3.936 11.448-3.936 6.312 0 11.448 1.752 11.448 3.936z" stroke="#000" stroke-width="2" fill="#aaa"></path>
@@ -132,7 +129,7 @@
                 <path d="M2.792 11.84h2.304v8.712c0 2.136-1.968 2.088-2.304 0V11.84zM25.184 11.84h-2.28v8.712c0 2.136 1.968 2.088 2.28 0V11.84z" fill="#2b2b2b"></path>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="silla3" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="silla3">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <path d="M5.75 7.424h16.544c.572 0 1.034.528 1.034 1.2v16.2c0 .648-.462 1.176-1.034 1.176H5.75c-.594 0-1.056-.528-1.056-1.176v-16.2c0-.672.462-1.2 1.056-1.2z" stroke="#000" stroke-width="2" fill="#bbb"></path>
                 <path d="M23.372 4.712V21.44h1.144c.264 0 .484-.264.484-.576V5.288c0-.336-.22-.576-.484-.576h-1.144z" stroke="#000" stroke-width="2"></path>
@@ -140,7 +137,7 @@
                 <path d="M4.65 4.712V21.44H3.528c-.286 0-.506-.264-.506-.576V5.288c0-.336.22-.576.506-.576H4.65z" stroke="#000" stroke-width="2"></path>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="silla4" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="silla4">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <path d="M5.408 9.392c8.664-1.32 8.664-1.32 17.304 0 1.248 7.68 1.248 7.68 1.248 16.056-9.888.768-9.888.768-19.8 0 0-8.376 0-8.376 1.248-16.056z" stroke="#000" stroke-width="2" fill="#bbb"></path>
                 <path d="M13.76 3.8h.6c.336 0 .576.24.576.552V8.6c0 .312-.24.552-.576.552h-.6a.564.564 0 0 1-.576-.552V4.352c0-.312.264-.552.576-.552zM5.96 4.568l.624-.048c.312-.024.6.192.624.504l.384 4.224c.024.288-.216.552-.528.576l-.624.072a.545.545 0 0 1-.6-.504l-.384-4.224a.545.545 0 0 1 .504-.6zM9.872 4.064l.6-.024a.564.564 0 0 1 .6.528l.192 4.224a.55.55 0 0 1-.552.576l-.624.048a.564.564 0 0 1-.576-.552L9.32 4.64a.535.535 0 0 1 .552-.576zM17.648 4.04l.624.024a.53.53 0 0 1 .528.576l-.192 4.224a.564.564 0 0 1-.576.552l-.624-.048a.564.564 0 0 1-.552-.576l.192-4.224a.564.564 0 0 1 .6-.528zM21.536 4.52l.624.048a.545.545 0 0 1 .504.6l-.36 4.224a.582.582 0 0 1-.624.504l-.624-.072c-.312-.024-.552-.288-.528-.576l.384-4.224c.024-.312.312-.528.624-.504z"
@@ -148,7 +145,7 @@
                 <path d="M2.432 3.056c11.64-1.248 11.64-1.248 23.256 0 .84.696-.168 2.256-.984 2.928-11.64-1.368-9.648-1.368-21.288 0-.816-.672-1.8-2.232-.984-2.928z" stroke="#000" stroke-width="2" fill="#bbb"></path>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="silla5" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="silla5">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
                 <path d="M8 22.4c0 1.32-1.08 2.4-2.4 2.4-1.32 0-2.4-1.08-2.4-2.4 0-1.32 1.08-2.4 2.4-2.4C6.92 20 8 21.08 8 22.4zM24.8 22.4c0 1.32-1.08 2.4-2.4 2.4-1.32 0-2.4-1.08-2.4-2.4 0-1.32 1.08-2.4 2.4-2.4 1.32 0 2.4 1.08 2.4 2.4zM8 5.6C8 6.92 6.92 8 5.6 8 4.28 8 3.2 6.92 3.2 5.6c0-1.32 1.08-2.4 2.4-2.4C6.92 3.2 8 4.28 8 5.6zM24.8 5.6c0 1.32-1.08 2.4-2.4 2.4C21.08 8 20 6.92 20 5.6c0-1.32 1.08-2.4 2.4-2.4 1.32 0 2.4 1.08 2.4 2.4z"
                 stroke="#000" stroke-width="2"></path>
@@ -159,7 +156,7 @@
         </div>
         <div >
           <div *ngSwitchCase="'cubiculos'" class="container-cubiculos" style="padding-top: 10px; ">
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="cubiculo1" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="cubiculo1">
               <svg name="Group" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="56px" height="56px">
                 <g transform="matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,51.66666666666668,73.33333333333333)">
                   <path d="M 17.52777777777778 46.30833333333333 L 20.16388888888889 47.78888888888889 L 16.444444444444446 54.03611111111111 C 15.433333333333334 55.80555555555556 12.761111111111113 54.28888888888888 13.772222222222226 52.55555555555554 L 17.52777777777778 46.30833333333333 Z" stroke="#000000" stroke-opacity="1" stroke-width="2" fill="#000000" fill-opacity="1"></path>
@@ -190,7 +187,7 @@
                 <path d="M 41.23111111111111 24.394666666666666 L 41.23111111111111 25.98933333333333" stroke="#000000" stroke-opacity="1" stroke-width="1" fill="#dddddd" fill-opacity="1"></path>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="cubiculo2" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="cubiculo2">
               <svg name="Group" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="56px" height="56px">
                 <g transform="matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,48.41666666666667,57.08333333333333)">
                   <path d="M 17.979166666666668 35.77291666666667 L 19.956250000000004 36.88333333333334 L 17.166666666666668 41.56875 C 16.408333333333335 42.895833333333336 14.404166666666669 41.75833333333334 15.162500000000001 40.458333333333336 L 17.979166666666668 35.77291666666667 Z" stroke="#000000" stroke-opacity="1" stroke-width="2" fill="#000000" fill-opacity="1"></path>
@@ -222,7 +219,7 @@
                 <path d="M 35.75666666666667 19.33766666666667 L 35.75666666666667 20.53366666666667" stroke="#000000" stroke-opacity="1" stroke-width="1" fill="#dddddd" fill-opacity="1"></path>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="cubiculo3" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="cubiculo3">
               <svg name="Group" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="56px" height="56px">
                 <g transform="matrix(-0.7071067811865475,0.7071067811865476,-0.7071067811865476,-0.7071067811865475,64.55962942664223,26.904894324170606)">
                   <path d="M 21.7242953183446 32.60818420723349 L 23.305961985011265 33.49651754056683 L 21.0742953183446 37.24485087390016 C 20.467628651677934 38.30651754056683 18.8642953183446 37.396517540566826 19.470961985011265 36.35651754056683 L 21.7242953183446 32.60818420723349 Z" stroke="#000000" stroke-opacity="1" stroke-width="2" fill="#000000" fill-opacity="1"></path>
@@ -250,7 +247,7 @@
                 </g>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="cubiculo4" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="cubiculo4">
               <svg name="Group" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="56px" height="56px">
                 <g transform="matrix(-0.7071067811865475,0.7071067811865476,-0.7071067811865476,-0.7071067811865475,52.71370815993012,21.834732842820344)">
                   <path d="M 19.00452450948701 27.088899509487007 L 19.81702450948701 27.549316176153674 L 19.32952450948701 28.375357842820343 C 19.018066176153674 28.917024509487007 18.19202450948701 28.47014950948701 18.51702450948701 27.914941176153675 L 19.00452450948701 27.088899509487007 Z" fill="#000000" fill-opacity="1"></path>
@@ -294,7 +291,7 @@
                   </g>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="cubiculo5" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="cubiculo5">
               <svg name="Group" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="56px" height="56px">
                 <g transform="matrix(-0.7071067811865475,0.7071067811865476,-0.7071067811865476,-0.7071067811865475,34.11064124882083,29.887469921519205)">
                   <path d="M 9.085661026392913 24.07435150258339 L 9.650541978773866 24.391613407345297 L 8.853518169250057 25.730303883535772 C 8.63685150258339 26.10947055020244 8.064232454964342 25.78447055020244 8.280899121631009 25.41304197877387 L 9.085661026392913 24.07435150258339 Z" stroke="#000000" stroke-opacity="1" stroke-width="2" fill="#000000" fill-opacity="1"></path>
@@ -354,7 +351,7 @@
                 </g>
               </svg>
             </div>
-            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="cubiculo6" cdkDrag>
+            <div _ngcontent-cuy-c303="" tabindex="-1" style="float: left;" class="cubiculo6">
               <svg name="Group" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="56px" height="56px">
                 <g transform="matrix(6.123233995736766e-17,1,-1,6.123233995736766e-17,66.69177381670039,-20.035498910572283)">
                   <path d="M 40.11363636363634 20.737591998518603 L 46.63096969696967 20.737591998518603 C 46.856303030303 20.737591998518603 47.038303030303 20.9455919985186 47.038303030303 21.210319271245876 L 47.038303030303 27.592137453064055 C 47.038303030303 27.84741018033678 46.856303030303 28.055410180336782 46.63096969696967 28.055410180336782 L 40.11363636363634 28.055410180336782 C 39.87963636363634 28.055410180336782 39.697636363636335 27.84741018033678 39.697636363636335 27.592137453064055 L 39.697636363636335 21.210319271245876 C 39.697636363636335 20.9455919985186 39.87963636363634 20.737591998518603 40.11363636363634 20.737591998518603 Z" stroke="#000000" stroke-opacity="1" stroke-width="2" fill="#bbbbbb" fill-opacity="1"></path>
@@ -407,34 +404,21 @@
       </div>
     
   </div>
-  <div class="row" style="flex-grow: 2; margin-left: 100px;">
-    <div class="col-md-6 mx-auto droptarget" (drop)="drop($event)" (dragover)="allowDrop($event)">
-      <div class="card p-4 example-boundary " style="position: absolute; z-index: -1;" >
-          <div #container2 ></div>
-      </div>      
-    </div>
-  </div>
+    <canvas class="canvas-container"
+    handleMouseEvent
+    [imagesOnCanvas]="imagesOnCanvas"
+    (updateCanvas)="updateCanvas"
+    id="canvas"
+    width=400
+    height=400
+    (drop)="drop($event)"
+    (dragover)="allowDrop($event)">
+    </canvas>
   
   
   <div id="div1" style="width: 20%;  display: flex;  justify-content: center;">
-    
       <p appTips [tips]="tipsList" ></p>
-    
   </div>
-
-  
-
-
-  <!--<div class="row" style="flex-grow: 2; margin-right: 150px;"> 
-    <div class="col-md-6 mx-auto ">
-      <div class="card p-4 " Boundary=".example-boundary" >
-        Solo me puedo mover en este div
-       <canvas class="glCanvas" id="lienzo" width="1111" height="252" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></canvas>
-      </div>  
-    </div>  
-  </div> 
-</div>-->
-
 
 
 
