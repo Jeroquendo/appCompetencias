@@ -1,13 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';  
-import { HttpClientModule } from '@angular/common/http';  
-import { NgModule } from '@angular/core';  
-import { AppComponent } from './app.component';  
-import { GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angularx-social-login';  
-import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';  
-import { LoginComponent } from './login/login.component';  
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angularx-social-login';
+import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
+import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { RegisterComponent } from './register/register.component';  
-import { AppRoutingModule } from '../app/app-routing.module';  
+import { RegisterComponent } from './register/register.component';
+import { AppRoutingModule } from '../app/app-routing.module';
 import { RouterModule } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,38 +19,40 @@ import { CommonModule } from '@angular/common';
 import { DragDropModule} from '@angular/cdk/drag-drop';
 import { TipsDirective } from 'src/app/dashboard/tips.directive';
 import { ResultsComponent } from './results/results.component';
+import { HandleMouseEventDirective } from './directives/handle-mouse-event.directive';
 
 const config = new AuthServiceConfig([
   {
    id: FacebookLoginProvider.PROVIDER_ID,
    provider: new FacebookLoginProvider('697701760791342')
   },
-  {  
-    id: GoogleLoginProvider.PROVIDER_ID,  
-    provider: new GoogleLoginProvider('1041722941969-9ontj9ig4hir3uvtlqis4r693m8mlapo.apps.googleusercontent.com')  
-  }  
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider('1041722941969-9ontj9ig4hir3uvtlqis4r693m8mlapo.apps.googleusercontent.com')
+  }
  ]);
- 
+
  export function provideConfig() {
   return config;
  }
 
-@NgModule({  
-  declarations: [  
+@NgModule({
+  declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     InicioComponent,
     DashboardComponent,
     TipsDirective,
-    ResultsComponent
-  ],  
-  imports: [  
-    BrowserModule,  
+    ResultsComponent,
+    HandleMouseEventDirective
+  ],
+  imports: [
+    BrowserModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule, 
+    HttpClientModule,
     AppRoutingModule,
     SocialLoginModule,
     BrowserAnimationsModule,
@@ -59,14 +61,14 @@ const config = new AuthServiceConfig([
     MatCardModule,
     DragDropModule
 
-  ],  
+  ],
   providers: [
     {
       provide: AuthServiceConfig,
       useFactory: provideConfig
      },
      AuthService
-  ],  
-  bootstrap: [AppComponent]  
-})  
+  ],
+  bootstrap: [AppComponent]
+})
 export class AppModule { }

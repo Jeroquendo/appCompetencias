@@ -1,0 +1,6 @@
+<svg name="fpWall" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="28px" height="28px">
+                <g transform="matrix(6.123233995736766e-17,1,-1,6.123233995736766e-17,28,-8.572527594031472e-16)">
+                  <path d="M 2 12 L 2 16 L 26 16 L 26 12 Z" fill="#ffffff" fill-opacity="1"></path>
+                  <path d="M 2 12 L 26 12 L 26 16 L 2 16 L 2 12 Z" stroke="#000000" stroke-opacity="1" stroke-width="2" fill="none"></path>
+                </g>
+              </svg>
