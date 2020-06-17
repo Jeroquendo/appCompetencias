@@ -1,41 +1,122 @@
-<h2 class="titulo-usuario" style="padding-top:15px;">Hola {{firstName}}!</h2>
-<div class="container" style="padding-top:50px;">  
-    <div class="row">  
-        <div class="col-md-6 mx-auto">  
-            <div class="card-group">  
-                <div class="card p-4">
-                    <div class="justify-content center">
-                        <p class="parrafo-info">
-                                Esta aplicación web consiste en un juego en el que usted podrá recrear un escenario
-                                que simula maquinaria e instalaciones de un entorno productivo real, en el cual 
-                                los estudiantes buscan distribuir de la mejor manera el espacio asignado para la ubicación de los equipos y 
-                                áreas del proceso productivo, a través del método convencional (SLP); y así, determinar cuál es la 
-                                distribución más adecuada.
-                        <br/>
-                                El método SLP puede aplicarse a oficinas, laboratorios, áreas de servicio, operaciones 
-                                manufactureras o almacenes, siendo aplicable en caso de readaptaciones en edificios 
-                                ya existentes, en nuevos edificios o en el nuevo emplazamiento en planta a proyectar.
-                        </p>
-                    </div>    
-                </div>  
-            </div>  
-        </div>  
-    </div> 
-</div>
-<div class="div-label" > 
-    <label type="text" class="label-info">
-        Antes de iniciar el juego se recomienda
-        investigar y comprender un poco más acerca del método (SLP) 
-        para obtener un buen resultado al final del juego.
-    </label>
-</div>
-<div class="row" style="justify-content: center;">
-    <div class="div-boton">  
-        <button type="button" (click)="signOut()"  class="btn btn-primary px-4">Sign Out</button >  
+<h2 class="titulo-usuario" >Hola {{firstName}}!</h2>
+<div class="row" style="padding-top:10px;">
+    <div class="col-sm-3" style="display: flex; align-items: center; flex-direction: column; " >
+      <select id="elementos" name="elementos" [(ngModel)]="optionSelected"  >
+        <option id="option-paredes" value="informacion" selected>Información de la app</option>
+        <option id="option-puertas" value="metodo">Metodo SLP</option>
+        <option id="option-mesas" value="fases">Fases de SLP</option>
+        <option id="option-sillas" value="elementos">Elementos de SLP</option>
+        <option id="option-cubiculos" value="procedimiento">Procedimiento de SLP</option>
+    </select>
+
+    <div style="padding-top: 100px;">
+      <button type="button" (click)="signOut()"  class="btn btn-primary px-4" >Sign Out</button> <br>
+      <button type="button"  class="btn btn-primary px-4" routerLink="/dashboard" style="margin-top: 15px; display: flex; justify-content: center;     margin-left: 8px;">Iniciar</button>
+    </div>
+    </div>
+    <div class="col-6" id="div-parrafo" [ngSwitch]="optionSelected">
+        <p class="parrafo-info" *ngSwitchCase="'informacion'">
+                Esta aplicación web consiste en un juego en el que usted podrá recrear un escenario
+                que simula maquinaria e instalaciones de un entorno productivo real, en el cual
+                los estudiantes buscan distribuir de la mejor manera el espacio asignado para la ubicación de los equipos y
+                áreas del proceso productivo, a través del método convencional (SLP); y así, determinar cuál es la
+                distribución más adecuada.
+        <br/>
+                El método SLP puede aplicarse a oficinas, laboratorios, áreas de servicio, operaciones
+                manufactureras o almacenes, siendo aplicable en caso de readaptaciones en edificios
+                ya existentes, en nuevos edificios o en el nuevo emplazamiento en planta a proyectar.
+        </p>
+        <p *ngSwitchCase="'metodo'">
+          <strong>Definición</strong><br><br>
+          Fue desarrollado por Richard Muther que, basándose en las distintas técnicas empleadas por los Ingenieros Industriales,
+          consiguió sistematizar los proyectos de distribución. <br/>
+
+          Este Método consigue enfocar de forma organizada los proyectos de planteamiento, fijando un cuadro operacional de Fases,
+          una serie de procedimientos, un conjunto de normas que permitan identificar, valorar y visualizar todos los elementos que
+          intervienen en la preparación de un planteamiento.<br/>
+
+          Esta técnica puede aplicarse a oficinas, laboratorios, áreas de servicio, operaciones manufactureras o almacenes, siendo
+          aplicable en caso de readaptaciones en edificios ya existentes, en nuevos edificios o en el nuevo emplazamiento en planta a proyectar.<br/>
+
+          A la hora de abordar el problema del Planteamiento de la Distribución en Planta se desprende que, lejos de ser una ciencia exacta, es
+          más bien un arte en el que la pericia y la experiencia juegan un papel fundamental.
+
+          En el desarrollo del proyecto se observará que, aunque existe un sustento matemático y analítico de las técnicas de distribución,
+          éste no es complejo y la solución final requiere de elementos imprescindibles basados en el sentido común y en el juicio del distribuidor. <br/>
+
+          El proceso racional para preparar el Planteamiento de la Distribución en Planta se muestra dando click en <button type="button" class="btn btn-link px-0" (click)="mostrarDiv()">figura</button>
+
+        </p>
+        <p *ngSwitchCase="'fases'">
+           <strong>Fases del Método S.L.P.</strong><br><br>
+
+          El Planteamiento Sistemático de la Distribución en Planta o Método S.L.P. recorre cuatro Fases desde que se plantea el
+          objetivo inicial hasta que se llega a la realidad física instalada. <br><br>
+
+          <li><strong>Fase I: Localización</strong> Inicialmente es necesario establecer el área que se pretende organizar. No es necesario que sea un
+          emplazamiento nuevo ya que puede tratarse del mismo, que necesita una replanificación, o de un espacio que ha quedado disponible. </li><br/>
+          <li><strong>Fase II: Planteamiento General </strong> En esta Fase es preciso disponer globalmente de toda la superficie a plantear, para lo cual se analizan
+          los sectores y los recorridos de forma que la disposición general, los enlaces y el aspecto general de cada sector importante queden determinados.</li><br/>
+          <li><strong>Fase III: Planteamiento Detallado</strong> A lo largo de esta Fase se determina el emplazamiento efectivo de cada elemento físico (maquina y equipo)
+          de las zonas de planteamiento. </li><br/>
+          <li><strong>Fase IV: Instalación</strong> Esta Fase comprende la preparación de la instalación, la obtención del conforme de la Dirección y los
+          desplazamientos necesarios de máquinas y equipos. </li><br/>
+        </p>
+        <p *ngSwitchCase="'elementos'">
+          <strong>Elementos Base del Método S.L.P. </strong><br><br>
+          El Método S.L.P. se basa en el estudio de cinco elementos a partir de los cuales se resuelve el problema de la distribución en planta.
+          Cada uno de estos elementos se asocia a una letra, siendo fácil de recordar con la clave del alfabeto de las facilidades de ingeniería de planteamiento: PQRST. <br><br>
+
+          <li><strong>El Producto o Material (P)</strong> que debe fabricarse, incluyendo materias primas, piezas compradas y productos terminados o semiterminados. </li><br>
+          <li><strong>La Cantidad o Volumen (Q)</strong> de cada variedad de productos o artículos que deben ser fabricados. </li><br>
+          <li><strong>El Recorrido o Proceso(R)</strong>, es decir, las operaciones y su secuencia o el orden en el cual se realizan éstas. </li><br>
+          <li><strong>Los Servicios Anexos, Actividades de Soporte y Funciones (S)</strong> que son necesarios para realizar las operaciones de fabricación y montaje,
+           de manera que las instalaciones y los productos funcionen con normalidad. </li><br>
+          <li><strong>El Tiempo o Toma de Tiempos (T)</strong> que relaciona PQRS y que influye de manera directa sobre estos cuatro elementos, ya que nos permite
+           precisar cuándo deben fabricarse los productos y en qué cantidades, cuánto durará el proceso y qué tipo de máquinas lo acelerarán, qué servicios son
+           necesarios y su situación, porque de ellos dependerá la velocidad a la que el personal se desplace de un punto de trabajo a otro. </li><br><br>
+
+           Por analogía, estos cinco elementos podrían ser los componentes de una llave que abra la puerta del lugar donde se encuentra la solución al problema de distribución en planta que se plantee.
+        </p>
+        <p *ngSwitchCase="'procedimiento'">
+          <strong>Procedimiento del Método S.L.P.</strong> <br><br>
+          Inicialmente se realiza el Análisis P-Q que permite tener una visión de la evolución de cara al futuro. Las fluctuaciones periódicas, las cargas máximas y
+          el número de instalaciones también se registran, con objeto de no olvidarlas a la hora de la preparación. <br>
+
+          Acto seguido se estudia el Recorrido de los Productos para poder organizar con seguridad el Planteamiento en función de los desplazamientos de los
+          productos dentro de los sectores afectados. <br>
+
+          Paralelamente se estudian las Relaciones entre las Actividades, de donde se extrae la necesidad de incluir en el proyecto las zonas de los servicios anexos. <br>
+
+          Posteriormente se combinan estos dos estudios resultando el Diagrama Relacional de Recorridos y/o Actividades, donde las distintas actividades, servicios
+          y zonas se orientan geográficamente los unos respecto de los otros, sin tener en cuenta el espacio que cada uno requiere. <br>
+
+          Seguidamente se examinan las necesidades de espacio, a partir de las máquinas y de los equipos necesarios tanto para la producción como para las
+          actividades auxiliares. Estas necesidades deben compararse en todo momento con el espacio total disponible. <br>
+
+          A continuación se fija sobre el Diagrama Relacional de Actividades la zona destinada a cada actividad, constituyendo el Diagrama Relacional de Espacios.
+          Llegados a este punto es necesario comentar que toda distribución en planta se basa en tres parámetros: <br><br>
+
+            <li><strong>Relaciones:</strong> Indica el grado relativo de proximidad deseado o requerido entre máquinas, departamentos o áreas en cuestión. </li><br>
+            <li><strong>Espacio:</strong> Determinado por la cantidad, clase y forma o configuración de los equipos a distribuir. </li><br>
+            <li><strong>Ajuste:</strong> Arreglo físico de los equipos, maquinaria y servicios, en condiciones reales. </li><br>
+            Por tanto, estos tres parámetros constituyen siempre la parte medular de cualquier proyecto de distribución en su Fase de planteamiento.
+            Las relaciones y el espacio están esencialmente unidos en este punto. <br>
+
+            El Diagrama Relacional de Espacios es, en esencia, un Planteamiento. No obstante, todavía habrá que adaptarlo a unos Factores Influyentes como
+            pueden ser sistemas de manutención, prácticas operatorias, consideraciones de seguridad, etc. A medida que vayamos introduciendo estos factores,
+            será preciso confrontar las ideas con las posibilidades o Limitaciones Prácticas. <br>
+            Durante este proceso de examen de Factores Influyentes y Limitaciones Prácticas, se irán examinando y verificando una idea tras otra. Aquellas
+            que tengan algún valor práctico se tendrán en cuenta, descartando las demás. <br>
+
+            Finalmente se realizará una valoración a todos los proyectos posibles y viables que queden, resultando un proyecto definitivo que será el Proyecto Seleccionado del Planteamiento General.
+
+        </p>
+    </div>
+    <div class="col-sm-3" id="div-imagen" style="display: none;">
+      <img src="src\assets\mapaSLP.png" alt="mapa SLP" title="mapa SLP" height="40" width="40">
     </div>
 
-
-    <div class="div-boton">  
-        <button type="button"  class="btn btn-primary px-4" routerLink="/dashboard">Iniciar</button >  
-    </div> 
 </div>
+
+

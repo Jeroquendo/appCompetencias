@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService, FacebookLoginProvider, GoogleLoginProvider } from 'angularx-social-login';  
+import { AuthService, FacebookLoginProvider, GoogleLoginProvider } from 'angularx-social-login';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RegisterComponent } from '../register/register.component'
 @Component({
@@ -10,8 +10,9 @@ import { RegisterComponent } from '../register/register.component'
 export class InicioComponent implements OnInit {
   user: any;
   firstName: string;
+  optionSelected: any = 'informacion';
   constructor(private authService: AuthService, private route: Router, private router: ActivatedRoute) { }
-  
+
   signOut(): void{
     this.authService.signOut().then(response => this.route.navigate(['login']));
     console.log("sirve");
@@ -36,5 +37,12 @@ export class InicioComponent implements OnInit {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(response => {
     this.user = JSON.parse(localStorage.getItem('user'));
     this.firstName = this.user.firstName;
-  })}  
+  })}
+
+  mostrarDiv(){
+    var divImagen = document.getElementById('div-imagen');
+    if(divImagen.style.display == 'none'){
+      divImagen.style.display = 'block';
+    }
+  }
 }
