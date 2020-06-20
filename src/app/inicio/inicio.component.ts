@@ -43,6 +43,8 @@ export class InicioComponent implements OnInit {
     var divImagen = document.getElementById('div-imagen');
     if(divImagen.style.display == 'none'){
       divImagen.style.display = 'block';
+    }else if (divImagen.style.display = 'block'){
+      divImagen.style.display == 'none'
     }
   }
 }

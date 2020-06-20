@@ -1,0 +1,99 @@
+.container-paredes{
+  width: px;
+  display: flex;
+  justify-content: center;
+}
+
+.container-puertas{
+  width: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.container-mesas{
+  width: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.container-sillas{
+  width: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.container-cubiculos{
+  width: 170px;
+
+}
+
+
+#div1{
+  height: fit-content;
+  border: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: inline-flex;
+  position: relative;
+  border-radius: 4px;
+  background-color: white;
+  text-align: justify;
+  padding: 10px;
+}
+#preview{
+  background:url('src\images\preview.png');
+  background-size: 100% 100%;
+  border: none;
+  height: 50px;
+  width: 50px;
+}
+#preview:focus{
+    outline: 0;
+}
+
+#volver{
+  background:url('src\images\home.png');
+  background-size: 100% 100%;
+  border: none;
+  height: 50px;
+  width: 50px;
+}
+#volver:focus{
+  outline: 0;
+  }
+.div-boton{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+
+}
+#logout{
+  background:url('src\images\logout.png');
+  background-size: 100% 100%;
+  border: none;
+  height: 50px;
+  width: 50px;
+}
+#logout:focus{
+  outline: 0;
+}
+
+#canvas {
+  background-image: url('src\images\cuadricula.png');
+  display: flex;
+  justify-content: center;
+}
+.canvas-container-dashboard{
+  display: flex;
+  justify-content: center;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.container-dashboard{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.container-datalist{
+flex:0 0 25%;
+max-width: 25%;
+}

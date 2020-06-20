@@ -58,3 +58,8 @@
   text-align: justify;
   padding: 10px;
 }
+
+#div-imagen{
+  background: url('src\assets\mapaSLP.jpg');
+  background-size: 100% 100%;
+}

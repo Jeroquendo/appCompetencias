@@ -20,6 +20,7 @@ import { DragDropModule} from '@angular/cdk/drag-drop';
 import { TipsDirective } from 'src/app/dashboard/tips.directive';
 import { ResultsComponent } from './results/results.component';
 import { HandleMouseEventDirective } from './directives/handle-mouse-event.directive';
+import { Level1Component } from './level1/level1.component';
 
 const config = new AuthServiceConfig([
   {
@@ -45,7 +46,8 @@ const config = new AuthServiceConfig([
     DashboardComponent,
     TipsDirective,
     ResultsComponent,
-    HandleMouseEventDirective
+    HandleMouseEventDirective,
+    Level1Component
   ],
   imports: [
     BrowserModule,
