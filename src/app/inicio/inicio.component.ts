@@ -44,7 +44,7 @@ export class InicioComponent implements OnInit {
     if(divImagen.style.display == 'none'){
       divImagen.style.display = 'block';
     }else if (divImagen.style.display = 'block'){
-      divImagen.style.display == 'none'
+      divImagen.style.display = 'none'
     }
   }
 }

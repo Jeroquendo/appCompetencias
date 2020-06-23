@@ -17,9 +17,6 @@
     <select id="elementos" name="elementos" [(ngModel)]="optionSelected"  >
         <option id="option-paredes" value="paredes" selected>Paredes</option>
         <option id="option-puertas" value="puertas">Puertas</option>
-        <option id="option-mesas" value="mesas">Mesas</option>
-        <option id="option-sillas" value="sillas">Sillas</option>
-        <option id="option-cubiculos" value="cubiculos">Cubiculos</option>
     </select>
 
     <div [ngSwitch]="optionSelected"  class="left-spacer" style="width: 150px; justify-content: center; display: flex;">
@@ -46,66 +43,6 @@
           </div>
           <div draggable="true" (dragstart)="drag($event)" style="float: left;" tabindex="-1"  class="puerta4">
             <img id="puerta4" src="assets/puertas/puerta4.svg"/>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div *ngSwitchCase="'mesas'" class="container-mesas" style="padding-top: 10px; ">
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="mesa1">
-            <img id="mesa1" src="assets/mesas/mesa1.svg"/>
-          </div>
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="mesa2">
-            <img id="mesa2" src="assets/mesas/mesa2.svg"/>
-          </div>
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="mesa3">
-            <img id="mesa3" src="assets/mesas/mesa3.svg"/>
-          </div>
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="mesa4">
-            <img id="mesa4" src="assets/mesas/mesa4.svg"/>
-          </div>
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="mesa5">
-            <img id="mesa5" src="assets/mesas/mesa5.svg"/>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div *ngSwitchCase="'sillas'" class="container-sillas" style="padding-top: 10px; ">
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="silla1">
-            <img id="silla1" src='assets/sillas/silla1.svg'/>
-          </div>
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="silla2">
-            <img id="silla2" src='assets/sillas/silla2.svg'/>
-          </div>
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="silla3">
-            <img id="silla3" src='assets/sillas/silla3.svg'/>
-          </div>
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="silla4">
-            <img id="silla4" src='assets/sillas/silla4.svg'/>
-          </div>
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="silla5">
-            <img id="silla5" src='assets/sillas/silla5.svg'/>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div *ngSwitchCase="'cubiculos'" class="container-cubiculos" style="padding-top: 10px; ">
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="cubiculo1">
-            <img id="cubiculo1" src="assets/cubiculos/cubiculo1.svg"/>
-          </div>
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="cubiculo2">
-            <img id="cubiculo2" src="assets/cubiculos/cubiculo2.svg"/>
-          </div>
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="cubiculo3">
-            <img id="cubiculo3" src="assets/cubiculos/cubiculo3.svg"/>
-          </div>
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="cubiculo4">
-            <img id="cubiculo4" src="assets/cubiculos/cubiculo4.svg"/>
-          </div>
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="cubiculo5">
-            <img id="cubiculo5" src="assets/cubiculos/cubiculo5.svg"/>
-          </div>
-          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="cubiculo6">
-            <img id="cubiculo6" src="assets/cubiculos/cubiculo6.svg"/>
           </div>
         </div>
       </div>
@@ -137,9 +74,9 @@
   <div class="container-datalist">
     <h3 style="display: flex; justify-content: center;">Información</h3>
     <div id="div1" style="display: flex;  justify-content: center;">
-        <span>Para empezar a familiarizarse con la App, en este primer nivel su objetivo será empezar a conocer
-          los componentes disponibles para crear un mejor espacio, en el menú selector encontrará, todos los elementos,
-          que puede agregar a la hoja de dibujo.
+        <span>En este nivel debes dividir o separar toda la superficie en sectores,
+           de forma que la disposición general, los enlaces y el aspecto general de
+           cada sector importante queden determinados.
         </span>
     </div>
   </div>
@@ -147,7 +84,7 @@
 
 </div>
 <div class="div-boton">
-  <button type="button"  class="btn btn-primary px-4" routerLink="/#">Nivel 2</button >
+  <button type="button"  class="btn btn-primary px-4" routerLink="/level2">Nivel 2</button >
 </div>
 
 

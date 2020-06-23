@@ -7,17 +7,17 @@ import { LoginComponent } from '../login/login.component';
 export class TipsDirective implements OnInit {
 
   @Input() tips: string;
-   
+
   constructor(private el: ElementRef) { }
 
   ngOnInit(){
-    
+
     this.handleTimeTips(this.tips);
-  
+
   }
-  
+
   handleTimeTips(tips){
-    
+
       setTimeout(()=>{
         let rand = Math.random();
         let totalTips = tips.length;
@@ -25,8 +25,8 @@ export class TipsDirective implements OnInit {
         let randomTip = tips[randIndex];
         this.el.nativeElement.innerHTML = randomTip;
         this.handleTimeTips(this.tips);
-      }, 4000)
-    
+      }, 20000)
+
   }
 
 

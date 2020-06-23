@@ -23,7 +23,6 @@ export class DashboardComponent {
     'Analiza y divide bien las áreas de la planta.', 'Distribuye de la mejor manera los materiales y máquinas siguiendo las fases del modelo SLP.',
     'El método SPL incorpora el flujo de materiales en el estudio de distribución, organizando el proceso de planificación total de manera racional y estableciendo una serie de fases y técnicas que permiten identificar, valorar y visualizar todos los elementos involucrados en la implantación y las relaciones existentes entre ellos.',
     'Te recomendamos realizar varias soluciones en una hoja y después de analizarlas plantee la que consideres mejor.'];
-  estiloDisplay: 'none';
   cv: any; cx: any;
   objetos: any; objetoActual = null;
   inicioX = 0; inicioY = 0;

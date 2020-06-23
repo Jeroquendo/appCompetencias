@@ -14,7 +14,7 @@
     z-index: 1;
     box-sizing: border-box;
     padding: 10px;
-  
+
   }
 
   .example-box2 {
@@ -62,7 +62,7 @@
   .clasificacion{
     direction: rtl;/* right to left */
     unicode-bidi: bidi-override;/* bidi de bidireccional */
-    
+
 }
 label:hover,
 label:hover ~ label{color:orange;}
@@ -74,3 +74,18 @@ input[type="radio"] {
 input[type="radio"]:checked ~ label {
     color: orange;
   }
+
+textarea{
+  resize: none;
+  width: 200px;
+  height: 200px;
+  border: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  text-align: justify;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 10px;
+}

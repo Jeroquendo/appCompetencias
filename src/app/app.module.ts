@@ -21,6 +21,8 @@ import { TipsDirective } from 'src/app/dashboard/tips.directive';
 import { ResultsComponent } from './results/results.component';
 import { HandleMouseEventDirective } from './directives/handle-mouse-event.directive';
 import { Level1Component } from './level1/level1.component';
+import { Level2Component } from './level2/level2.component';
+import { Level3Component } from './level3/level3.component';
 
 const config = new AuthServiceConfig([
   {
@@ -47,7 +49,9 @@ const config = new AuthServiceConfig([
     TipsDirective,
     ResultsComponent,
     HandleMouseEventDirective,
-    Level1Component
+    Level1Component,
+    Level2Component,
+    Level3Component
   ],
   imports: [
     BrowserModule,

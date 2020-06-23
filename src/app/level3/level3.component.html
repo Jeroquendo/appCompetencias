@@ -1,0 +1,158 @@
+
+<h2 class="titulo-dashboard" style="padding-top:20px; display: flex; justify-content: center;">Nivel 3</h2>
+
+<!--
+<div class="viewport-scrollable LoSensitive" style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: hidden;" title="">
+    <div style="position: absolute; top: -400px; left: -346px; margin-left: 0px; width: 1914.51px; height: 872.896px; cursor: move;">
+      <div style="position: fixed; z-index: 1; top: 0px; left: -1000px; right: -1000px; bottom: -1000px;"></div>
+    </div>
+    <div class="embedded-border fixed" style="pointer-events: none; display: none;"></div>
+    <canvas class="glCanvas" id="7801fe19-719a-4c26-a633-4076ea8d13a0" width="1111" height="252" style="position: fixed; pointer-events: none;
+     left: 215px; top: 105px; width: 1111px; height: 252px;"></canvas>
+</div>
+-->
+<div class="container-dashboard" id="container-dashboard" style="padding-top:20px; display: flex; margin: 20px;">
+
+  <div class="container-datalist" id="container-datalist" style="display: flex; align-items: center; flex-direction: column; " >
+
+    <select id="elementos" name="elementos" [(ngModel)]="optionSelected"  >
+      <option id="option-paredes" value="paredes" selected>Paredes</option>
+      <option id="option-puertas" value="puertas">Puertas</option>
+      <option id="option-mesas" value="mesas">Mesas</option>
+      <option id="option-sillas" value="sillas">Sillas</option>
+      <option id="option-cubiculos" value="cubiculos">Cubiculos</option>
+  </select>
+
+    <div [ngSwitch]="optionSelected"  class="left-spacer" style="width: 150px; justify-content: center; display: flex;">
+      <div>
+        <div *ngSwitchCase="'paredes'"  id="container-paredes" style=" padding-top: 10px">
+            <div draggable="true" (dragstart)="drag($event)" style="float: left;" tabindex="-1" >
+              <img id="pared1" src='assets/paredes/pared1.svg'/>
+            </div>
+          <div draggable="true" (dragstart)="drag($event)" style="float: left;" tabindex="-1" >
+            <img id="pared2" src="assets/paredes/pared2.svg"/>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div *ngSwitchCase="'puertas'" class="container-puertas" style="padding-top: 10px;">
+          <div draggable="true" (dragstart)="drag($event)" style="float: left;"  tabindex="-1"  class="puerta1">
+            <img id="puerta1" src="assets/puertas/puerta1.svg"/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" style="float: left;" tabindex="-1"  class="puerta2">
+            <img id="puerta2" src="assets/puertas/puerta2.svg"/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" style="float: left;" tabindex="-1"  class="puerta3">
+            <img id="puerta3" src="assets/puertas/puerta3.svg"/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" style="float: left;" tabindex="-1"  class="puerta4">
+            <img id="puerta4" src="assets/puertas/puerta4.svg"/>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div *ngSwitchCase="'mesas'" class="container-mesas" style="padding-top: 10px; ">
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="mesa1">
+            <img id="mesa1" src="assets/mesas/mesa1.svg"/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="mesa2">
+            <img id="mesa2" src="assets/mesas/mesa2.svg"/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="mesa3">
+            <img id="mesa3" src="assets/mesas/mesa3.svg"/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="mesa4">
+            <img id="mesa4" src="assets/mesas/mesa4.svg"/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="mesa5">
+            <img id="mesa5" src="assets/mesas/mesa5.svg"/>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div *ngSwitchCase="'sillas'" class="container-sillas" style="padding-top: 10px; ">
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="silla1">
+            <img id="silla1" src='assets/sillas/silla1.svg'/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="silla2">
+            <img id="silla2" src='assets/sillas/silla2.svg'/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="silla3">
+            <img id="silla3" src='assets/sillas/silla3.svg'/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="silla4">
+            <img id="silla4" src='assets/sillas/silla4.svg'/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="silla5">
+            <img id="silla5" src='assets/sillas/silla5.svg'/>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div *ngSwitchCase="'cubiculos'" class="container-cubiculos" style="padding-top: 10px; ">
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="cubiculo1">
+            <img id="cubiculo1" src="assets/cubiculos/cubiculo1.svg"/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="cubiculo2">
+            <img id="cubiculo2" src="assets/cubiculos/cubiculo2.svg"/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="cubiculo3">
+            <img id="cubiculo3" src="assets/cubiculos/cubiculo3.svg"/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="cubiculo4">
+            <img id="cubiculo4" src="assets/cubiculos/cubiculo4.svg"/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="cubiculo5">
+            <img id="cubiculo5" src="assets/cubiculos/cubiculo5.svg"/>
+          </div>
+          <div draggable="true" (dragstart)="drag($event)" tabindex="-1" style="float: left;" class="cubiculo6">
+            <img id="cubiculo6" src="assets/cubiculos/cubiculo6.svg"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="div-botones"  style="margin-top: 50px;">
+      <div class="col" style="margin: 5px;" >
+        <button id="preview"></button><br>
+        <span>Preview</span>
+      </div>
+      <div class="col" style="margin: 5px; display: block;" >
+        <button  id="volver"  routerLink="/inicio"></button><br>
+        <span style="margin-left: 5px;">Volver</span>
+      </div>
+    </div>
+  </div>
+  <div class="canvas-container-dashboard" >
+    <canvas class="canvas-container "
+    handleMouseEvent
+    [imagesOnCanvas]="imagesOnCanvas"
+    (updateCanvas)="updateCanvas"
+    id="canvas"
+    width=400
+    height=400
+    (drop)="drop($event)"
+    (dragover)="allowDrop($event)">
+    </canvas>
+  </div>
+
+  <div class="container-datalist">
+    <h3 style="display: flex; justify-content: center;">Información</h3>
+    <div id="div1" style="display: flex;  justify-content: center;">
+        <span>Con lo hecho anteriormente ya se tiene la capacidad de proceder a analizar
+          todos los elementos que se necesitan para crear una buena area de trabajo, además
+          se determina el emplazamiento efectivo de cada elemento de las zonas de planteamiento.
+        </span>
+    </div>
+    <h3 style="display: flex; justify-content: center;  margin-top: 15px;">Tips</h3>
+    <div id="div1" style=" display: flex;  justify-content: center;">
+      <p appTips [tips]="tipsList" >Distribuye de la mejor manera los materiales y máquinas siguiendo las fases del modelo SLP.</p>
+  </div>
+  </div>
+
+</div>
+<div class="div-boton">
+  <button type="button"  class="btn btn-primary px-4" routerLink="/results">Finalizar</button >
+</div>
+
+
