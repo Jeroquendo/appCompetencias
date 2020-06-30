@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, ChangeDetectorRef } from '@angular/core';
+import { CanvasURLService } from '../servicio/canvasURL.service';
 
 @Component({
   selector: 'app-level3',
@@ -17,11 +18,24 @@ export class Level3Component implements OnInit {
   'Analiza y divide bien las áreas de la planta.', 'Distribuye de la mejor manera los materiales y máquinas siguiendo las fases del modelo SLP.',
   'El método SPL incorpora el flujo de materiales en el estudio de distribución, organizando el proceso de planificación total de manera racional y estableciendo una serie de fases y técnicas que permiten identificar, valorar y visualizar todos los elementos involucrados en la implantación y las relaciones existentes entre ellos.',
   'Te recomendamos realizar varias soluciones en una hoja y después de analizarlas plantee la que consideres mejor.'];
+  @ViewChild('canvas', {static:true}) canvas: ElementRef ;
 
-  constructor() { }
+  constructor(private canvasURLService: CanvasURLService, private rendered: Renderer2) { }
 
   ngOnInit(): void {
     window.requestAnimationFrame(this.updateCanvas);
+    window.requestAnimationFrame(this.updateCanvasAfterLoad);
+
+  }
+  updateCanvasAfterLoad = () =>{
+    window.requestAnimationFrame(this.updateCanvasAfterLoad);
+    var URLCanvas = this.canvasURLService.getDataURL();
+    var canvas2:any = document.getElementById('canvas');
+    var ctx = canvas2.getContext('2d');
+    var image = new Image();
+    image.src = URLCanvas;
+    ctx.drawImage(image,0,0);
+    console.log(image);
   }
 
   allowDrop(e) {

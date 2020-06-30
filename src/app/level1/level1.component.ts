@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CanvasURLService } from '../servicio/canvasURL.service';
 
 @Component({
   selector: 'app-level1',
@@ -12,10 +13,18 @@ export class Level1Component implements OnInit {
   inicioX = 0; inicioY = 0;
   imagesOnCanvas = [];
 
-  constructor() { }
+  constructor(private canvasURLService: CanvasURLService) {}
+
 
   ngOnInit(): void {
     window.requestAnimationFrame(this.updateCanvas);
+    var canvas: any = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    document.getElementById('reiniciar').addEventListener('click',function(){
+      ctx.beginPath();
+    });
+
+
   }
 
   allowDrop(e) {
@@ -65,4 +74,23 @@ export class Level1Component implements OnInit {
       obj.context.drawImage(obj.image, obj.x, obj.y);
     }
   }
+
+  limpiarCanvas(){
+    var canvas: any = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    // bind event handler to clear button
+    console.log("hice click");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+
+  }
+  /*
+   descargar(){
+    var canvas:any = document.getElementById("canvas");
+    var data = canvas.toDataURL('image/png');
+    //Otros navegadores: Google chrome, Firefox etc...
+    this.href = data;
+    document.getElementById('reiniciar').addEventListener('click',this.descargar,false);
+  }*/
+
 }

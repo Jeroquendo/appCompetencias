@@ -81,6 +81,8 @@
   background-image: url('src\images\cuadricula.png');
   display: flex;
   justify-content: center;
+  width: 300px;
+  height: 270px;
 }
 .canvas-container-dashboard{
   display: flex;

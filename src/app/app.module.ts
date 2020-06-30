@@ -23,6 +23,7 @@ import { HandleMouseEventDirective } from './directives/handle-mouse-event.direc
 import { Level1Component } from './level1/level1.component';
 import { Level2Component } from './level2/level2.component';
 import { Level3Component } from './level3/level3.component';
+import { CanvasURLService } from './servicio/canvasURL.service';
 
 const config = new AuthServiceConfig([
   {
@@ -73,7 +74,8 @@ const config = new AuthServiceConfig([
       provide: AuthServiceConfig,
       useFactory: provideConfig
      },
-     AuthService
+     AuthService,
+     CanvasURLService
   ],
   bootstrap: [AppComponent]
 })
