@@ -1,6 +1,6 @@
 <h2 style="  display: flex;justify-content: center;padding-top: 20px;">¡ Dejanos tu comentario !</h2>
 <div id="recomendaciones" style="display: flex; justify-content: center;">
-  <textarea name="textarea" cols="30" rows="10">Aquí puedes darnos tus sugerencias para continuar mejorando la aplicación</textarea>
+  <textarea name="textarea" cols="30" rows="10" (blur)="onTextClick()" (focus)="onTextClick()">{{textComment}}</textarea>
 </div>
 
 
@@ -28,7 +28,7 @@
         <span>Descargar</span>
       </div>
       <div style="margin: 5px;">
-        <button id="reintentar"   style="margin-left: 20px; " routerLink="/dashboard"></button><br>
+        <button id="reintentar"   style="margin-left: 20px; " routerLink="/inicio"></button><br>
         <span >Vuelve a intentar</span>
       </div>
       <div style="margin: 5px;">

@@ -12,19 +12,14 @@ export class Level1Component implements OnInit {
   objetos: any; objetoActual = null;
   inicioX = 0; inicioY = 0;
   imagesOnCanvas = [];
-
+  animation = true;
+  requestId:any;
+  requestIdUpdate:any;
   constructor(private canvasURLService: CanvasURLService) {}
 
 
   ngOnInit(): void {
     window.requestAnimationFrame(this.updateCanvas);
-    var canvas: any = document.getElementById('canvas');
-    var ctx = canvas.getContext('2d');
-    document.getElementById('reiniciar').addEventListener('click',function(){
-      ctx.beginPath();
-    });
-
-
   }
 
   allowDrop(e) {
@@ -75,14 +70,27 @@ export class Level1Component implements OnInit {
     }
   }
 
-  limpiarCanvas(){
+  resetCanvas = () =>{
+
     var canvas: any = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
     // bind event handler to clear button
     console.log("hice click");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.beginPath();
+    this.imagesOnCanvas = [];
+    if(!this.requestId){
+      this.requestId = window.requestAnimationFrame(this.resetCanvas);
+    }else{
+      window.cancelAnimationFrame(this.requestId);
+      this.requestId = undefined;
+    }
+    // ctx.beginPath();
 
+  }
+  saveCanvas(){
+    var canvas: any = document.getElementById('canvas');
+    const url = canvas.toDataURL();
+    this.canvasURLService.toDataURL(url);
   }
   /*
    descargar(){

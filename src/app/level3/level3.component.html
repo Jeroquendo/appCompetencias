@@ -113,9 +113,9 @@
     </div>
 
     <div id="div-botones"  style="margin-top: 50px;">
-      <div class="col" style="margin: 5px;" >
-        <button id="preview"></button><br>
-        <span>Preview</span>
+      <div class="col" style="margin: 5px; display: block;" >
+        <input type="button" id="reiniciar" (click)="resetCanvas()" ><br>
+        <span>Reiniciar</span>
       </div>
       <div class="col" style="margin: 5px; display: block;" >
         <button  id="volver"  routerLink="/inicio"></button><br>
@@ -132,8 +132,7 @@
     width=400
     height=400
     (drop)="drop($event)"
-    (dragover)="allowDrop($event)"
-    #canvas>
+    (dragover)="allowDrop($event)">
     </canvas>
   </div>
 

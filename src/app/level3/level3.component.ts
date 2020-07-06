@@ -19,6 +19,7 @@ export class Level3Component implements OnInit {
   'El método SPL incorpora el flujo de materiales en el estudio de distribución, organizando el proceso de planificación total de manera racional y estableciendo una serie de fases y técnicas que permiten identificar, valorar y visualizar todos los elementos involucrados en la implantación y las relaciones existentes entre ellos.',
   'Te recomendamos realizar varias soluciones en una hoja y después de analizarlas plantee la que consideres mejor.'];
   @ViewChild('canvas', {static:true}) canvas: ElementRef ;
+  requestId : any;
 
   constructor(private canvasURLService: CanvasURLService, private rendered: Renderer2) { }
 
@@ -33,7 +34,7 @@ export class Level3Component implements OnInit {
     var canvas2:any = document.getElementById('canvas');
     var ctx = canvas2.getContext('2d');
     var image = new Image();
-    image.src = URLCanvas;
+    image.src = URLCanvas || '';
     ctx.drawImage(image,0,0);
     console.log(image);
   }
@@ -84,6 +85,23 @@ export class Level3Component implements OnInit {
       var obj = this.imagesOnCanvas[x];
       obj.context.drawImage(obj.image, obj.x, obj.y);
     }
+  }
+  resetCanvas = () =>{
+
+    var canvas: any = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    // bind event handler to clear button
+    console.log("hice click");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    this.imagesOnCanvas = [];
+    if(!this.requestId){
+      this.requestId = window.requestAnimationFrame(this.resetCanvas);
+    }else{
+      window.cancelAnimationFrame(this.requestId);
+      this.requestId = undefined;
+    }
+    // ctx.beginPath();
+
   }
 
 }

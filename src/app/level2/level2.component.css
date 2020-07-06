@@ -99,3 +99,10 @@
 flex:0 0 25%;
 max-width: 25%;
 }
+#reiniciar{
+  background:url('src\images\reintentar.png');
+  background-size: 100% 100%;
+  border: none;
+  height: 50px;
+  width: 50px;
+}

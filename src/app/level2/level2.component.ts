@@ -12,7 +12,7 @@ export class Level2Component implements OnInit {
   objetos: any; objetoActual = null;
   inicioX = 0; inicioY = 0;
   imagesOnCanvas = [];
-
+  requestId:any;
   constructor() { }
 
   ngOnInit(): void {
@@ -65,6 +65,23 @@ export class Level2Component implements OnInit {
       var obj = this.imagesOnCanvas[x];
       obj.context.drawImage(obj.image, obj.x, obj.y);
     }
+  }
+  resetCanvas = () =>{
+
+    var canvas: any = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    // bind event handler to clear button
+    console.log("hice click");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    this.imagesOnCanvas = [];
+    if(!this.requestId){
+      this.requestId = window.requestAnimationFrame(this.resetCanvas);
+    }else{
+      window.cancelAnimationFrame(this.requestId);
+      this.requestId = undefined;
+    }
+    // ctx.beginPath();
+
   }
 
 }

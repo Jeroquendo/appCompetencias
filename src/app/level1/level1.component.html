@@ -58,7 +58,7 @@
         <span style="margin-left: 5px;">Volver</span>
       </div>
       <div class="col" style="margin: 5px; display: block;" >
-        <input type="button" id="reiniciar"  ><br>
+        <input type="button" id="reiniciar" (click)="resetCanvas()" ><br>
         <span>Reiniciar</span>
       </div>
     </div>
@@ -88,7 +88,7 @@
 
 </div>
 <div class="div-boton">
-  <button type="button"  class="btn btn-primary px-4" routerLink="/level2" >Nivel 2</button >
+  <button type="button"  class="btn btn-primary px-4" routerLink="/level2" (click)="saveCanvas()" >Nivel 2</button >
 </div>
 
 
